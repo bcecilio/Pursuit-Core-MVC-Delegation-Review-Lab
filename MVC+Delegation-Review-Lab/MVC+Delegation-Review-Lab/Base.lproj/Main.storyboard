@@ -138,11 +138,12 @@
                         <outlet property="slider" destination="rcT-PD-5uB" id="W9b-2t-rgF"/>
                         <outlet property="sliderStatus" destination="zTK-CS-Tnc" id="2Nb-5z-qsa"/>
                         <outlet property="stepperFont" destination="2J9-ki-IIe" id="Ffs-M5-Zhu"/>
+                        <outlet property="stepperLabel" destination="zTK-CS-Tnc" id="od1-Be-xJa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZV-hr-GMb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998.5507246376812" y="116.51785714285714"/>
+            <point key="canvasLocation" x="2041" y="117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mbo-Cy-f89">
