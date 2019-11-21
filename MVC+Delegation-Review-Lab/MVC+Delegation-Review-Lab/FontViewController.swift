@@ -15,16 +15,21 @@ class FontViewController: UIViewController {
     @IBOutlet weak var stepperFont: UIStepper!
     @IBOutlet weak var stepperLabel: UILabel!
     
+    var font : CGFloat!
 
-    var currentFontSize: Int = 17 {
+    var currentFontSize: CGFloat = 17 {
         didSet {
-            stepperLabel.text = "Looking at \(stepperFont.value) Cohort."
+            stepperLabel.text = " Preview Font Size : \(stepperFont.value)"
         }
     }
     
     override func viewDidLoad() {
         configureStepper()
         configureSlider()
+    }
+    
+    func loadData() {
+        
     }
     
     func configureStepper() {
@@ -41,9 +46,10 @@ class FontViewController: UIViewController {
     }
     
     @IBAction func stepperFunction(_ sender: UIStepper) {
-        currentFontSize = Int(stepperFont.value)
+        currentFontSize = CGFloat(sender.value)
         slider.value = Float(sender.value)
         sliderStatus.text = Int(sender.value).description
+        currentFontSize = CGFloat(sender.value)
     }
 
 }

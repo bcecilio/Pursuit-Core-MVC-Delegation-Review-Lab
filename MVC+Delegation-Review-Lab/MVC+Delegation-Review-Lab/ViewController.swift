@@ -12,6 +12,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var fontSize : CGFloat = 17 {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     var movies = [Movie]() {
         didSet { // property observer
             // reload our tableView
@@ -29,6 +35,13 @@ class ViewController: UIViewController {
     func loadData() {
         movies = Movie.allMovies
     }
+    
+    @IBAction func viewChangedFont(segue: UIStoryboardSegue) {
+        guard let FontViewController = segue.source as? FontViewController else {
+            return
+        }
+        fontSize = FontViewController.font ?? 17
+    }
 
 }
 
@@ -43,6 +56,9 @@ extension ViewController: UITableViewDataSource {
         let movie = movies[indexPath.row]
         
         cell.textLabel?.text = movie.name
+        cell.detailTextLabel?.text = movie.year.description
+        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        cell.textLabel?.font = UIFont.systemFont(ofSize: fontSize)
         
         return cell
     }
